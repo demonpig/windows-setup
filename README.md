@@ -12,16 +12,6 @@
 
 Run these series of commands in order to finish the setup process. The goal for these steps is to be minimal as possible as most of the configuration should be done in the `configure-windows.ps1` script. This script is executed upon first launch of the Windows VM.
 
-- Format the disk to remove the recovery partition
-
-  ```
-  Invoke-WebRequest https://raw.githubusercontent.com/demonpig/windows-setup/main/scripts/diskpart.txt -OutFile C:\Windows\System32\Sysprep\diskpart.txt
-  ```
-
-  ```
-  diskpart /s C:\Windows\System32\Sysprep\diskpart.txt
-  ```
-
 - Install the rest of the Virtio drivers
 
   ```
@@ -30,6 +20,16 @@ Run these series of commands in order to finish the setup process. The goal for 
 
   ```
   E:\virtio-win-guest-tools.exe /passive
+  ```
+
+- Format the disk to remove the recovery partition
+
+  ```
+  Invoke-WebRequest https://raw.githubusercontent.com/demonpig/windows-setup/main/scripts/diskpart.txt -OutFile C:\Windows\System32\Sysprep\diskpart.txt
+  ```
+
+  ```
+  diskpart /s C:\Windows\System32\Sysprep\diskpart.txt
   ```
 
 - Configure the answer file and related scripts for out of box experience (OOBE)
