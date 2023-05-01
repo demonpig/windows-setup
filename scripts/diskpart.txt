@@ -1,0 +1,6 @@
+select disk 0
+select partition 3
+delete partition override
+select volume c
+extend
+exit

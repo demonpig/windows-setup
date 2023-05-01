@@ -3,4 +3,4 @@
 
 Enable-NetFirewallRule -name RemoteDesktop-UserMode-In-TCP
 
-winrm quickconfig --force
+winrm quickconfig -force
