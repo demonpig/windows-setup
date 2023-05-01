@@ -1,0 +1,17 @@
+heat_template_version: 2015-04-30
+
+description: Deploy a single Windows Server 2022 instance
+
+resources:
+  win2k22_instance:
+    type: OS::Nova::Server
+    properties:
+      image: WINDOWS-SERVER-2022-x86_64-20230501
+      flavor: g.standard.medium
+      networks:
+        - network: provider_net_shared_3
+
+outputs:
+  win2k22_instance_ip:
+    description: IP address of deployed instance
+    value: { get_attr: [win2k22_instance, first_address] }
