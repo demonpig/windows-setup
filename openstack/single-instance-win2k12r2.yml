@@ -1,0 +1,17 @@
+heat_template_version: 2015-04-30
+
+description: Deploy a single Windows Server 2012 R2 instance
+
+resources:
+  win2k12r2_instance:
+    type: OS::Nova::Server
+    properties:
+      image: WINDOWS-SERVER-2012-R2-x86_64-20230502
+      flavor: g.standard.medium
+      networks:
+        - network: provider_net_shared_3
+
+outputs:
+  win2k12r2_instance_ip:
+    description: IP address of deployed instance
+    value: { get_attr: [win2k12r2_instance, first_address] }
