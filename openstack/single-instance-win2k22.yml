@@ -6,7 +6,7 @@ resources:
   win2k22_instance:
     type: OS::Nova::Server
     properties:
-      image: WINDOWS-SERVER-2022-x86_64-20230501
+      image: WINDOWS-SERVER-2022-x86_64-20230525
       flavor: g.standard.medium
       networks:
         - network: provider_net_shared_3
